@@ -14,13 +14,13 @@ pipeline {
 		}
         stage('Build&Push Image') {
             steps {
-                sh 'docker build -t desaiakshay92/flask_jenkins .'
-		sh 'docker push desaiakshay92/flask_jenkins'
+                sh 'docker build -t 8485012281/jenkins .'
+		sh 'docker push 8485012281/jenkins'
             }
         }
         stage('Run Image') {
             steps {
-                sh 'docker run -d -p 8020:9191 --name flask_container desaiakshay92/flask_jenkins'
+                sh 'docker run -d -p 8020:9191 --name flask_container 8485012281/jenkins'
             }
         }
         

@@ -28,7 +28,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                echo 'Successfully Pushed and deploy successfull'
+                echo 'Successfully Pushed and deploy successfully'
             }
         }
     }

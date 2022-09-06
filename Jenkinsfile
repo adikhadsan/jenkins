@@ -31,5 +31,21 @@ pipeline {
                 echo 'Successfully Pushed and deploy successfully'
             }
         }
+        stage('Upload Artifact to artifactory'){
+            environment{
+                CI = true
+                
+                PASS = credentials('pass')
+            }
+            steps{
+                sh 'curl -u jenkins:${PASS} -T /home/tf/slave1 "http://localhost:8082/artifactory/jenkins/"'
+            }
+            post{
+                success{
+                    echo 'Succefully uploaded to jfrog artifact'
+                }
+            }
+        }	    
+	    
     }
     }

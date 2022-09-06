@@ -36,7 +36,7 @@ pipeline {
                 PASS = credentials('pass')
             }
             steps{
-                sh 'curl -u jenkins:${PASS} -T /var/lib/jenkins/workspace/pipe2 "http://192.168.59.1:8082/artifactory/jenkins/"'
+                sh 'curl -u jenkins:${PASS} -T /var/lib/jenkins/workspace/pipe2/. "http://192.168.59.1:8082/artifactory/jenkins/"'
             }
             post{
                 success{
